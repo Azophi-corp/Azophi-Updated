@@ -1,6 +1,7 @@
-import React from 'react';
-import Logo from '../ui/Logo';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import React from "react";
+import Logo from "../ui/Logo";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { company, social } from "../../config/site";
 
 const Footer: React.FC = () => {
   return (
@@ -13,79 +14,81 @@ const Footer: React.FC = () => {
               Your trusted partner for innovative IT solutions and managed services.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href={social.facebook} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href={social.twitter} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href={social.linkedin} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href={social.instagram} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
                 <Instagram size={20} />
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">IT Consulting</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Managed Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Digital Transformation</a></li>
+              <li><a href="#it-consulting" className="text-gray-400 hover:text-white">IT Consulting</a></li>
+              <li><a href="#managed-services" className="text-gray-400 hover:text-white">Managed Services</a></li>
+              <li><a href="#cloud-solutions" className="text-gray-400 hover:text-white">Cloud Solutions</a></li>
+              <li><a href="#cybersecurity" className="text-gray-400 hover:text-white">Cybersecurity</a></li>
+              <li><a href="#digital-transformation" className="text-gray-400 hover:text-white">Digital Transformation</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-6">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Industries</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#case-studies" className="text-gray-400 hover:text-white">Case Studies</a></li>
+              <li><a href="#industries" className="text-gray-400 hover:text-white">Industries</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-white">Contact</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="mr-3 text-blue-500 flex-shrink-0 mt-1" size={18} />
+                <MapPin className="mr-3 text-brand-500 flex-shrink-0 mt-1" size={18} />
                 <span className="text-gray-400">
-                  5250 Old Orchard Rd<br />
-                  Suite 300<br />
-                  Skokie, IL 60077
+                  {company.addressLines.map((l) => (
+                    <span key={l}>
+                      {l}
+                      <br />
+                    </span>
+                  ))}
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-3 text-blue-500 flex-shrink-0" size={18} />
-                <a href="tel:+13127259197" className="text-gray-400 hover:text-white transition-colors">
-                  (312) 725-9197
+                <Phone className="mr-3 text-brand-500 flex-shrink-0" size={18} />
+                <a href={company.phoneHref} className="text-gray-400 hover:text-white">
+                  {company.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail className="mr-3 text-blue-500 flex-shrink-0" size={18} />
-                <a href="mailto:info@azophi.com" className="text-gray-400 hover:text-white transition-colors">
-                  info@azophi.com
+                <Mail className="mr-3 text-brand-500 flex-shrink-0" size={18} />
+                <a href={company.emailHref} className="text-gray-400 hover:text-white">
+                  {company.email}
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Azophi. All rights reserved.
+              © {new Date().getFullYear()} {company.name}. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Sitemap</a>
+              <a href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+              <a href="#" className="text-gray-500 hover:text-white text-sm">Terms of Service</a>
+              <a href="#services" className="text-gray-500 hover:text-white text-sm">Sitemap</a>
             </div>
           </div>
         </div>
