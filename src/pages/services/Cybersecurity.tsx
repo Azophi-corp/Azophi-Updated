@@ -27,8 +27,7 @@ const Cybersecurity: React.FC = () => (
           <h3 className="text-xl font-semibold mb-1">Security that scales</h3>
           <p className="text-gray-700">We’ll prioritize controls that deliver the most risk reduction first.</p>
         </div>
-        <a href="/contact"><Button>Book a risk assessment</Button></a>
-
+        <Button to="/contact">Book a risk assessment</Button>
       </div>
     </div>
   </section>

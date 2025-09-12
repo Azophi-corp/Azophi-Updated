@@ -47,7 +47,7 @@ const ItConsulting: React.FC = () => (
           <h3 className="text-xl font-semibold mb-1">Ready to align IT with your KPIs?</h3>
           <p className="text-gray-700">Let’s scope an advisory sprint tailored to your goals.</p>
         </div>
-        <a href="/contact"><Button>Talk to an expert</Button></a>
+        <Button to="/contact">Talk to an expert</Button>
 
 
       </div>
