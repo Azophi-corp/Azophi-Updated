@@ -1,42 +1,43 @@
+// src/config/site.ts
 export const company = {
-    name: "Azophi",
-    addressLines: ["5250 Old Orchard Rd", "Suite 300", "Skokie, IL 60077"],
-    phoneDisplay: "(312) 725-9197",
-    phoneHref: "tel:+13127259197",
-    email: "info@azophi.com",
-    emailHref: "mailto:info@azophi.com",
+    name: 'Azophi',
+    addressLines: ['5250 Old Orchard Rd', 'Suite 300', 'Skokie, IL 60077'],
+    phoneDisplay: '(312) 725-9197',
+    phoneHref: 'tel:+13127259197',
+    email: 'info@azophi.com',
+    emailHref: 'mailto:info@azophi.com',
 };
-
 
 export const social = {
-    facebook: "https://facebook.com/",
-    twitter: "https://twitter.com/",
-    linkedin: "https://www.linkedin.com/company/",
-    instagram: "https://instagram.com/",
+    facebook: 'https://facebook.com/',
+    twitter: 'https://twitter.com/',
+    linkedin: 'https://linkedin.com/company/',
+    instagram: 'https://instagram.com/',
 };
-
 
 export const nav = [
     {
-        name: "Services", href: "#services", dropdown: [
-            { name: "IT Consulting", href: "#it-consulting" },
-            { name: "Managed Services", href: "#managed-services" },
-            { name: "Cloud Solutions", href: "#cloud-solutions" },
-            { name: "Cybersecurity", href: "#cybersecurity" },
-            { name: "Digital Transformation", href: "#digital-transformation" },
-        ]
+        name: 'Services',
+        to: '/services',
+        dropdown: [
+            { name: 'IT Consulting', to: '/services/it-consulting' },
+            { name: 'Managed Services', to: '/services/managed-services' },
+            { name: 'Cloud Solutions', to: '/services/cloud-solutions' },
+            { name: 'Cybersecurity', to: '/services/cybersecurity' },
+            { name: 'Digital Transformation', to: '/services/digital-transformation' },
+        ],
     },
-    { name: "About", href: "#about" },
-    { name: "Industries", href: "#industries" },
-    { name: "Case Studies", href: "#case-studies" },
-    { name: "Contact", href: "#contact" },
+    { name: 'About', to: '/about' },
+    { name: 'Industries', to: '/industries' },
+    { name: 'Case Studies', to: '/case-studies' },
+    { name: 'Contact', to: '/contact' },
 ];
 
-
+// used by Home services grid
 export const services = [
-    { id: "it-consulting", title: "IT Consulting", desc: "Strategic technology planning and roadmapping to align IT with business goals and maximize ROI." },
-    { id: "managed-services", title: "Managed Services", desc: "Proactive monitoring, management, and support for your entire IT infrastructure, 24/7." },
-    { id: "cloud-solutions", title: "Cloud Solutions", desc: "Secure, scalable, and cost-effective cloud services—from migration to ongoing management." },
-    { id: "cybersecurity", title: "Cybersecurity", desc: "Comprehensive security solutions to protect your business from evolving threats and vulnerabilities." },
-    { id: "digital-transformation", title: "Digital Transformation", desc: "End-to-end solutions to modernize your business processes and drive innovation." },
+    { id: 'it-consulting', title: 'IT Consulting', desc: 'Strategic planning and roadmaps aligned to business KPIs.' },
+    { id: 'managed-services', title: 'Managed Services', desc: '24/7 monitoring, help desk, patching and proactive care.' },
+    { id: 'cloud-solutions', title: 'Cloud Solutions', desc: 'Migrations, modern architectures, and FinOps optimization.' },
+    { id: 'cybersecurity', title: 'Cybersecurity', desc: 'Assessments, endpoint protection, SIEM/SOC, IR playbooks.' },
+    { id: 'digital-transformation', title: 'Digital Transformation', desc: 'Workflow redesign, automation, data platforms and APIs.' },
 ];

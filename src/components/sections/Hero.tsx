@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10"
                 onClick={() => go("#contact")}
               >
                 Learn More
@@ -55,14 +55,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full">
-        <svg className="fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
-          <path
-            fillOpacity="1"
-            d="M0,96L80,112C160,128,320,160,480,160C640,160,800,128,960,106.7C1120,85,1280,75,1360,69.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-          />
-        </svg>
-      </div>
     </div>
   );
 };

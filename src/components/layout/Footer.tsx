@@ -1,7 +1,8 @@
-import React from "react";
-import Logo from "../ui/Logo";
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import { company, social } from "../../config/site";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../ui/Logo';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { company, social } from '../../config/site';
 
 const Footer: React.FC = () => {
   return (
@@ -10,43 +11,33 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <Logo className="mb-6 text-white" />
-            <p className="text-gray-400 mb-6">
-              Your trusted partner for innovative IT solutions and managed services.
-            </p>
+            <p className="text-gray-400 mb-6">Your trusted partner for innovative IT solutions and managed services.</p>
             <div className="flex space-x-4">
-              <a href={social.facebook} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
-                <Facebook size={20} />
-              </a>
-              <a href={social.twitter} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
-                <Twitter size={20} />
-              </a>
-              <a href={social.linkedin} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
-                <Linkedin size={20} />
-              </a>
-              <a href={social.instagram} target="_blank" className="text-gray-400 hover:text-white" rel="noreferrer">
-                <Instagram size={20} />
-              </a>
+              <a href={social.facebook} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white"><Facebook size={20} /></a>
+              <a href={social.twitter} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white"><Twitter size={20} /></a>
+              <a href={social.linkedin} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white"><Linkedin size={20} /></a>
+              <a href={social.instagram} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white"><Instagram size={20} /></a>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
-              <li><a href="#it-consulting" className="text-gray-400 hover:text-white">IT Consulting</a></li>
-              <li><a href="#managed-services" className="text-gray-400 hover:text-white">Managed Services</a></li>
-              <li><a href="#cloud-solutions" className="text-gray-400 hover:text-white">Cloud Solutions</a></li>
-              <li><a href="#cybersecurity" className="text-gray-400 hover:text-white">Cybersecurity</a></li>
-              <li><a href="#digital-transformation" className="text-gray-400 hover:text-white">Digital Transformation</a></li>
+              <li><Link to="/services/it-consulting" className="text-gray-400 hover:text-white">IT Consulting</Link></li>
+              <li><Link to="/services/managed-services" className="text-gray-400 hover:text-white">Managed Services</Link></li>
+              <li><Link to="/services/cloud-solutions" className="text-gray-400 hover:text-white">Cloud Solutions</Link></li>
+              <li><Link to="/services/cybersecurity" className="text-gray-400 hover:text-white">Cybersecurity</Link></li>
+              <li><Link to="/services/digital-transformation" className="text-gray-400 hover:text-white">Digital Transformation</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-6">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#about" className="text-gray-400 hover:text-white">About Us</a></li>
-              <li><a href="#case-studies" className="text-gray-400 hover:text-white">Case Studies</a></li>
-              <li><a href="#industries" className="text-gray-400 hover:text-white">Industries</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white">Contact</a></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
+              <li><Link to="/case-studies" className="text-gray-400 hover:text-white">Case Studies</Link></li>
+              <li><Link to="/industries" className="text-gray-400 hover:text-white">Industries</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
             </ul>
           </div>
 
@@ -56,25 +47,16 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin className="mr-3 text-brand-500 flex-shrink-0 mt-1" size={18} />
                 <span className="text-gray-400">
-                  {company.addressLines.map((l) => (
-                    <span key={l}>
-                      {l}
-                      <br />
-                    </span>
-                  ))}
+                  {company.addressLines.map(l => (<span key={l}>{l}<br /></span>))}
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 text-brand-500 flex-shrink-0" size={18} />
-                <a href={company.phoneHref} className="text-gray-400 hover:text-white">
-                  {company.phoneDisplay}
-                </a>
+                <a href={company.phoneHref} className="text-gray-400 hover:text-white">{company.phoneDisplay}</a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 text-brand-500 flex-shrink-0" size={18} />
-                <a href={company.emailHref} className="text-gray-400 hover:text-white">
-                  {company.email}
-                </a>
+                <a href={company.emailHref} className="text-gray-400 hover:text-white">{company.email}</a>
               </li>
             </ul>
           </div>
@@ -82,13 +64,11 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} {company.name}. All rights reserved.
-            </p>
+            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm">Terms of Service</a>
-              <a href="#services" className="text-gray-500 hover:text-white text-sm">Sitemap</a>
+              <Link to="/privacy" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>
+              <Link to="/terms" className="text-gray-500 hover:text-white text-sm">Terms of Service</Link>
+              <Link to="/services" className="text-gray-500 hover:text-white text-sm">Sitemap</Link>
             </div>
           </div>
         </div>
@@ -98,3 +78,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

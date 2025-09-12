@@ -1,47 +1,46 @@
-import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Hero from "./components/sections/Hero";
-import Services from "./components/sections/Services";
-import Benefits from "./components/sections/Benefits";
-import Testimonials from "./components/sections/Testimonials";
-import Contact from "./components/sections/Contact";
-import About from "./components/sections/About";
-import Industries from "./components/sections/Industries";
-import CaseStudies from "./components/sections/CaseStudies";
 
-function App() {
-  useEffect(() => {
-    document.title = "Azophi | IT Consulting & Managed Services";
+// pages (note the ./)
+import Home from "./pages/Home";
+import ServicesIndex from "./pages/services/ServicesIndex";
+import ItConsulting from "./pages/services/ItConsulting";
+import ManagedServices from "./pages/services/ManagedServices";
+import CloudSolutions from "./pages/services/CloudSolutions";
+import Cybersecurity from "./pages/services/Cybersecurity";
+import DigitalTransformation from "./pages/services/DigitalTransformation";
+import About from "./pages/About";
+import Industries from "./pages/Industries";
+import CaseStudies from "./pages/CaseStudies";
+import ContactPage from "./pages/ContactPage";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import NotFound from "./pages/NotFound";
 
-    const stylesheet = document.createElement("style");
-    stylesheet.textContent = `
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in { animation: fadeIn 1s ease forwards; }
-    `;
-    document.head.appendChild(stylesheet);
-    return () => { document.head.removeChild(stylesheet); };
-  }, []);
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
-        <Hero />
-        <Services />
-        <Benefits />
-        <About />
-        <Industries />
-        <CaseStudies />
-        <Testimonials />
-        <Contact />
+      <main className="pt-20 flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesIndex />} />
+          <Route path="/services/it-consulting" element={<ItConsulting />} />
+          <Route path="/services/managed-services" element={<ManagedServices />} />
+          <Route path="/services/cloud-solutions" element={<CloudSolutions />} />
+          <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+          <Route path="/services/digital-transformation" element={<DigitalTransformation />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
     </div>
   );
 }
-
-export default App;
