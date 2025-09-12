@@ -31,7 +31,7 @@ const DigitalTransformation: React.FC = () => (
           <p className="text-gray-700">We’ll pilot quickly, prove value, then scale responsibly.</p>
         </div>
         <a href="/contact"><Button>Plan a pilot</Button></a>
-        <Button to="/contact">Plan a pilot</Button>
+
       </div>
     </div>
   </section>

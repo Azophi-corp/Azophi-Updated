@@ -33,7 +33,7 @@ const ManagedServices: React.FC = () => (
           <p className="text-gray-700">We’ll tailor SLAs, coverage hours, and runbooks to you.</p>
         </div>
         <a href="/contact"><Button>Get a support plan</Button></a>
-        <Button to="/contact">Get a support plan</Button>
+
 
       </div>
     </div>

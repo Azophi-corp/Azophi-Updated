@@ -35,7 +35,7 @@ const CloudSolutions: React.FC = () => (
           </p>
         </div>
         <Button to="/contact">Start a migration</Button>
-        <Button to="/contact">Start a migration</Button>
+
       </div>
     </div>
   </section>

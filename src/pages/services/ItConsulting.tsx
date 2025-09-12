@@ -48,7 +48,7 @@ const ItConsulting: React.FC = () => (
           <p className="text-gray-700">Let’s scope an advisory sprint tailored to your goals.</p>
         </div>
         <a href="/contact"><Button>Talk to an expert</Button></a>
-        <Button to="/contact">Talk to an expert</Button>
+
 
       </div>
     </div>
