@@ -21,18 +21,24 @@ const CloudSolutions: React.FC = () => (
         </div>
         <div className="p-6 rounded-xl border bg-white">
           <h2 className="text-2xl font-semibold mb-3">Platforms</h2>
-          <p className="text-gray-700">AWS, Microsoft Azure, Google Cloud, VMware. Terraform, Bicep, GitHub Actions.</p>
+          <p className="text-gray-700">
+            AWS, Microsoft Azure, Google Cloud, VMware. Terraform, Bicep, GitHub Actions.
+          </p>
         </div>
       </div>
 
       <div className="flex items-center justify-between bg-brand-50 border rounded-xl p-6">
         <div>
           <h3 className="text-xl font-semibold mb-1">Make the cloud pay for itself</h3>
-          <p className="text-gray-700">We’ll build a finance-friendly roadmap with measurable savings.</p>
+          <p className="text-gray-700">
+            We’ll build a finance-friendly roadmap with measurable savings.
+          </p>
         </div>
-        <a href="/contact"><Button>Start a migration</Button></a>
+        <Button to="/contact">Start a migration</Button>
+        <Button to="/contact">Start a migration</Button>
       </div>
     </div>
   </section>
 );
+
 export default CloudSolutions;
