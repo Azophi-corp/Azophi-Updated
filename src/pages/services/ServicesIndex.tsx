@@ -1,21 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Server, Cloud, Shield, Database, BarChart } from "lucide-react";
+import { Server, Cloud, Shield, Database, BarChart, LineChart } from "lucide-react";
 import Card from "../../components/ui/Card";
 
-type ServiceItem = {
+type Item = {
   to: string;
   title: string;
   desc: string;
   icon: React.ReactNode;
 };
 
-const items: ServiceItem[] = [
+const items: Item[] = [
   { to: "/services/it-consulting", title: "IT Consulting", icon: <BarChart />, desc: "Roadmaps, audits, and executive guidance aligned to KPIs." },
   { to: "/services/managed-services", title: "Managed Services", icon: <Server />, desc: "24/7 monitoring, patching, help desk, and proactive care." },
   { to: "/services/cloud-solutions", title: "Cloud Solutions", icon: <Cloud />, desc: "Migrations, modern architectures, and cost optimization." },
   { to: "/services/cybersecurity", title: "Cybersecurity", icon: <Shield />, desc: "Risk assessments, endpoint protection, SOC, and IR playbooks." },
   { to: "/services/digital-transformation", title: "Digital Transformation", icon: <Database />, desc: "Workflow redesign, automation, data strategy, and integrations." },
+  // NEW
+  { to: "/services/data-analytics", title: "Data & Analytics", icon: <LineChart />, desc: "Data pipelines, trusted KPIs, and decision-ready dashboards." },
 ];
 
 const ServicesIndex: React.FC = () => {

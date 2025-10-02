@@ -1,8 +1,9 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
-// pages (note the ./)
+// pages
 import Home from "./pages/Home";
 import ServicesIndex from "./pages/services/ServicesIndex";
 import ItConsulting from "./pages/services/ItConsulting";
@@ -10,6 +11,7 @@ import ManagedServices from "./pages/services/ManagedServices";
 import CloudSolutions from "./pages/services/CloudSolutions";
 import Cybersecurity from "./pages/services/Cybersecurity";
 import DigitalTransformation from "./pages/services/DigitalTransformation";
+import DataAnalytics from "./pages/services/DataAnalytics"; // NEW
 import About from "./pages/About";
 import Industries from "./pages/Industries";
 import CaseStudies from "./pages/CaseStudies";
@@ -18,7 +20,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -31,6 +33,7 @@ export default function App() {
           <Route path="/services/cloud-solutions" element={<CloudSolutions />} />
           <Route path="/services/cybersecurity" element={<Cybersecurity />} />
           <Route path="/services/digital-transformation" element={<DigitalTransformation />} />
+          <Route path="/services/data-analytics" element={<DataAnalytics />} /> {/* NEW */}
           <Route path="/about" element={<About />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/case-studies" element={<CaseStudies />} />
@@ -43,4 +46,6 @@ export default function App() {
       <Footer />
     </div>
   );
-}
+};
+
+export default App;
