@@ -16,8 +16,7 @@ const Contact: React.FC = () => {
     phone: "",
     company: "",
     message: "",
-    // honeypot (bots fill this; humans won't)
-    "bot-field": "",
+    "bot-field": "", // honeypot
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +32,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setError(null);
 
-    // If honeypot has value, silently abort (spam)
+    // spam bots fill honeypot; ignore those
     if (formData["bot-field"]) return;
 
     try {
@@ -60,7 +59,7 @@ const Contact: React.FC = () => {
         message: "",
         "bot-field": "",
       });
-    } catch (err) {
+    } catch {
       setError("Sorry, something went wrong. Please try again.");
     }
   };
@@ -71,10 +70,10 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Let's Discuss Your IT Needs
+              Let&apos;s Discuss Your IT Needs
             </h2>
             <p className="text-gray-600 text-lg">
-              Whether you're looking for a complete IT overhaul or just want to
+              Whether you&apos;re looking for a complete IT overhaul or just want to
               learn more, our team is ready to help.
             </p>
           </div>
@@ -131,19 +130,8 @@ const Contact: React.FC = () => {
               Get In Touch
             </h3>
 
-            {/* Hidden static form to let Netlify detect fields at build-time */}
-            <form
-              name="contact"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              hidden
-            >
-              <input type="text" name="name" />
-              <input type="email" name="email" />
-              <input type="tel" name="phone" />
-              <input type="text" name="company" />
-              <textarea name="message" />
-            </form>
+            {/* (Optional) extra safety: a hidden form here is fine, but
+                Netlify detection relies on the static form in index.html */}
 
             {formSubmitted ? (
               <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
@@ -264,12 +252,10 @@ const Contact: React.FC = () => {
                   />
                 </div>
 
-                {/* Optional: Netlify reCAPTCHA
+                {/* Optional reCAPTCHA:
                 <div data-netlify-recaptcha="true" className="mb-6" /> */}
 
-                {error && (
-                  <p className="text-red-600 text-sm mb-4">{error}</p>
-                )}
+                {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
 
                 <Button type="submit" className="w-full">
                   Send Message
