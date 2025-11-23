@@ -33,18 +33,18 @@ export interface ServiceEntry {
 
 export const company: CompanyInfo = {
   name: "Azophi",
-  addressLines: ["123 Example Street", "Suite 400", "Chicago, IL 60601"],
-  phoneDisplay: "+1 (555) 123 4567",
-  phoneHref: "tel:+15551234567",
+  addressLines: ["5250 Old Orchard Rd", "Suite 300", "Skokie, IL 60077"],
+  phoneDisplay: "(312) 725-9197",
+  phoneHref: "tel:+13127259197",
   email: "info@azophi.com",
   emailHref: "mailto:info@azophi.com",
 };
 
 export const social: SocialLinks = {
-  facebook: "https://facebook.com",
-  twitter: "https://twitter.com",
-  linkedin: "https://linkedin.com",
-  instagram: "https://instagram.com",
+  facebook: "https://facebook.com/",
+  twitter: "https://twitter.com/",
+  linkedin: "https://linkedin.com/company/",
+  instagram: "https://instagram.com/",
 };
 
 export const nav: NavItem[] = [
@@ -99,10 +99,11 @@ export const services: ServiceEntry[] = [
   },
 ];
 
-// Notes:
-// This file centralizes company info, navigation, and the short service descriptions used on cards.
-// Case studies are intentionally left out of the nav so we do not show that page anywhere.
-// If a new service is added we only need to extend this services array and wire a new page and route. 
+// Notes for future devs:
+// - This file centralizes company contact info, social links, navigation, and short service descriptions.
+// - Case studies are not included anywhere here because that page was removed from the site.
+// - When adding a new service, extend the services array and add a matching route and page component.
+// - The header and footer both read from company and social so updates here automatically flow through the site.
 
 
 
