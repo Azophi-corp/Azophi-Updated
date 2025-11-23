@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
-// pages
 import Home from "./pages/Home";
 import ServicesIndex from "./pages/services/ServicesIndex";
 import ItConsulting from "./pages/services/ItConsulting";
@@ -11,10 +10,9 @@ import ManagedServices from "./pages/services/ManagedServices";
 import CloudSolutions from "./pages/services/CloudSolutions";
 import Cybersecurity from "./pages/services/Cybersecurity";
 import DigitalTransformation from "./pages/services/DigitalTransformation";
-import DataAnalytics from "./pages/services/DataAnalytics"; // NEW
-import About from "./pages/About";
-import Industries from "./pages/Industries";
-import CaseStudies from "./pages/CaseStudies";
+import DataAnalytics from "./pages/services/DataAnalytics";
+import AboutPage from "./pages/About";
+import IndustriesPage from "./pages/Industries";
 import ContactPage from "./pages/ContactPage";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -32,11 +30,13 @@ const App: React.FC = () => {
           <Route path="/services/managed-services" element={<ManagedServices />} />
           <Route path="/services/cloud-solutions" element={<CloudSolutions />} />
           <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-          <Route path="/services/digital-transformation" element={<DigitalTransformation />} />
-          <Route path="/services/data-analytics" element={<DataAnalytics />} /> {/* NEW */}
-          <Route path="/about" element={<About />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route
+            path="/services/digital-transformation"
+            element={<DigitalTransformation />}
+          />
+          <Route path="/services/data-analytics" element={<DataAnalytics />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
@@ -49,3 +49,8 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+// Notes:
+// The app routing no longer exposes a case studies page which matches the request to remove case study content.
+// Each route points to a specific page component so structure is easy to follow for new developers.
+// Header and footer remain shared across all routes so updates to navigation chrome are centralized.

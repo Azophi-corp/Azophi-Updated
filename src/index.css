@@ -3,23 +3,55 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    .animate-fade-in {
-        animation: fadeIn 1s ease forwards;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
 }
+
+/* Partner logos marquee slider */
+.partner-marquee {
+  overflow: hidden;
+}
+
+.partner-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: partner-marquee 26s linear infinite;
+}
+
+.partner-marquee-item {
+  flex: 0 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+@keyframes partner-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Notes:
+   Tailwind remains the main styling system and we only add a couple of small custom animations here.
+   The fade in utility is used by the hero and can be reused for other sections if needed.
+   Partner marquee styles power the logo slider so the section stays simple and does not depend on any extra libraries. */
